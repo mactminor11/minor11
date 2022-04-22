@@ -76,7 +76,9 @@ class Algorithms {
     static msort(e, order) {
         let element = e;
         let solution = new Animation();
+        // 
         mergeSort(0, element.length - 1);
+        // for(let i = 0 ;i<element.length;i++)console.log(element[i])
 
         function mergeSort(l, h) {
             if (h <= l) {
@@ -144,12 +146,12 @@ class Algorithms {
                 
                 while (order=="desc"?(elements[i] > pivot):(elements[i] < pivot)) {
                     i++;
-                    solution.addFrame(new Frame([], []));
+                    solution.addFrame(new Frame([], [i,pivot]));
                     console.log(i)
                 }
                 while (order=="desc"?(elements[j] < pivot):(elements[j] > pivot)) {
                     j--;
-                    solution.addFrame(new Frame([], []));
+                    solution.addFrame(new Frame([], [j,pivot]));
                     console.log(i)
                 }
                 if (i <= j) {
@@ -178,7 +180,7 @@ class Algorithms {
             var temp = items[l];
             items[l] = items[r];
             items[r] = temp;
-            solution.addFrame(new Frame([l, r],[]));
+            solution.addFrame(new Frame([l, r], [l, r]));
         }
         return solution;
     }
