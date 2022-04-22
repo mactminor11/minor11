@@ -32,7 +32,8 @@ $("#reset").on("click", function() {
 });
 
 $("#restart").on("click", function() {
-    restart();
+    reset();
+    runAlgo();
 });
 
 function updateSpeed() {
